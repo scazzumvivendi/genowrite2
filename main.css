@@ -1,0 +1,23 @@
+*{
+    font-family: 'EB Garamond';
+}
+
+p{
+    font-size: large;
+}
+
+h3{
+    font-size: larger;
+}
+
+h2{
+    font-size: x-large;
+}
+
+h1{
+    font-size: xx-large;
+}
+
+#editor{
+    height: 90%;
+}
