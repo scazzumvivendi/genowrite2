@@ -1,5 +1,8 @@
 *{
     font-family: 'EB Garamond';
+    background-color:  #222831;
+    color:#EEEEEE;
+    stroke:#EEEEEE !important;
 }
 
 p{
@@ -20,4 +23,8 @@ h1{
 
 #editor{
     height: 90%;
+}
+
+#dropbox-synced{
+    display:none
 }

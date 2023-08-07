@@ -1,10 +1,21 @@
-Check if after stop or \n or -- is a capitalized letter
-Replace after stop or \n or -- is a capitalized letter with capitalized
-Change font
-Word Count in screen
-Replace text ('--', due maiuscole a inizio frase)
-Title and settings modal
-Title Update
+edit in menu
 Export to HTML
-Multidocument support
-Dropbox sync
+export to HTML in menu
+
+NICE TO HAVE:
+Refactor
+NICE Modal
+
+Dropbox sync -> OK
+Multidocument support -> OK
+Title and settings modal -> OK / settings limited to multidoc
+Slow with > 1000 words: check only last 500 characters and/or debounce
+Fixme: Highlight when debouncing because of full stop. -> Done debounce
+
+New rule of no two capital letters together - with exceptions -> OK
+Check if after stop or \n or -- is a capitalized letter -> OK
+Replace after stop or \n or -- is a capitalized letter with capitalized -> OK
+Change font -> OK
+Word Count in screen -> OK
+Replace text ('--', due maiuscole a inizio frase) --> OK
+Title Update --> OK
