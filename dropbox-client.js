@@ -1,4 +1,4 @@
-var REDIRECT_URI = 'http://scazzumvivendi.github.io/genowrite2/index.html';
+var REDIRECT_URI = 'https://scazzumvivendi.github.io/genowrite2/index.html';
 var CLIENT_ID = 'dbabu374d69t7oz';
 var dbxAuth = new Dropbox.DropboxAuth({
     clientId: CLIENT_ID,
