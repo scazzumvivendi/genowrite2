@@ -3,7 +3,7 @@ var CLIENT_ID = 'dbabu374d69t7oz';
 var dbxAuth = new Dropbox.DropboxAuth({
     clientId: CLIENT_ID,
 });
-var accessToken = window.localStorage.getItem("accessToken");
+var accessToken = localStorage.getItem("accessToken");
 
 // Parses the url and gets the access token if it is in the urls hash
 function getCodeFromUrl() {
@@ -19,7 +19,7 @@ function hasRedirectedFromAuth() {
 function doAuth() {
     dbxAuth.getAuthenticationUrl(REDIRECT_URI, undefined, 'code', 'offline', undefined, undefined, true)
         .then(authUrl => {
-            window.sessionStorage.setItem("codeVerifier", dbxAuth.codeVerifier);
+            sessionStorage.setItem("codeVerifier", dbxAuth.codeVerifier);
             window.location.href = authUrl;
         })
         .catch((error) => console.error(error));
@@ -31,7 +31,7 @@ if (accessToken) {
     dbxAuth.setCodeVerifier(window.sessionStorage.getItem('codeVerifier'));
     dbxAuth.getAccessTokenFromCode(REDIRECT_URI, getCodeFromUrl())
         .then((response) => {
-            window.localStorage.setItem("accessToken", response.result.access_token);
+            localStorage.setItem("accessToken", response.result.access_token);
         })
         .catch((error) => {
             console.error(error.error || error);
@@ -39,7 +39,7 @@ if (accessToken) {
 }
 
 function getGenowriteDropboxState() {
-    var accessToken = window.localStorage.getItem("accessToken");
+    var accessToken = localStorage.getItem("accessToken");
 
     if (!accessToken) {
         console.error("No access token provided!");
@@ -55,13 +55,12 @@ function getGenowriteDropboxState() {
         })
         .catch(function (error) {
             console.error(error.error || error);
-            window.localStorage.removeItem("accessToken");
         });
 
 }
 
 function setGenowriteDropboxState(state) {
-    var accessToken = window.localStorage.getItem("accessToken");
+    var accessToken = localStorage.getItem("accessToken");
 
     if (!accessToken) {
         console.error("No access token provided!");
@@ -89,7 +88,7 @@ function setGenowriteDropboxState(state) {
                 })
                 .catch(function (error) {
                     console.error(error.error || error);
-                    window.localStorage.removeItem("accessToken");
+                    localStorage.removeItem("accessToken");
                 });
         })
 
