@@ -254,7 +254,7 @@ function refreshDocumentList(genowriteKeys) {
         fileTitle.append(textNode)
         const deleteButton = document.createElement("button")
         deleteButton.style.float = "right"
-        deleteButton.innerText = "Delete"
+        deleteButton.innerText = "cancella"
         deleteButton.addEventListener('click', (ev)=>deleteDocument(key))
         fileTitle.append(deleteButton)
         docsContainer.appendChild(fileTitle)
