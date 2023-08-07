@@ -5,6 +5,21 @@ var quill = new Quill('#editor', {
     theme: 'snow'
 },);
 
+const editor = document.getElementById('editor');
+
+function resizeEditor() {
+  const windowHeight = window.innerHeight;
+  const editorHeight = editor.offsetHeight;
+
+  if (editorHeight > windowHeight - 175) {
+    editor.style.height = (windowHeight - 175) + 'px';
+  }
+}
+
+// Chiamare la funzione all'avvio e in caso di ridimensionamento della finestra
+resizeEditor();
+window.addEventListener('resize', resizeEditor);
+
 
 /** Utils */
 function checkWordCount(text) {
