@@ -85,13 +85,13 @@ function setGenowriteDropboxState(state) {
                 .then(function (data) {
                     console.log("SEND STATUS OK")
                     return data;
-                })
-                .catch(function (error) {
-                    console.error(error.error || error);
-                    if ((error.error && error.error.contains("token")) || (error && error.contains("token"))) {
-                        localStorage.removeItem("accessToken");                        
-                    }
-                });
+                })               
         })
+        .catch(function (error) {
+            console.error(error.error || error);
+            if ((error.error && error.error.contains("token")) || (error && error.contains("token"))) {
+                localStorage.removeItem("accessToken");                        
+            }
+        });
 
 }
