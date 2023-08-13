@@ -28,3 +28,7 @@ h1{
 #dropbox-synced{
     display:none
 }
+
+.doc {
+    cursor: pointer;
+}

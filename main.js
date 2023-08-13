@@ -250,7 +250,7 @@ function refreshDocumentList(genowriteKeys) {
         fileTitle.classList = "doc"
         fileTitle.attributes["name"] = key
         const textNode = document.createTextNode(key);
-        textNode.addEventListener('click', (ev)=>selectDocument(key))
+        fileTitle.addEventListener('click', (ev)=>selectDocument(key))
         fileTitle.append(textNode)
         const deleteButton = document.createElement("button")
         deleteButton.style.float = "right"
