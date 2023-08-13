@@ -54,7 +54,9 @@ function getGenowriteDropboxState() {
             return data.result.fileBlob.text()
         })
         .catch(function (error) {
-            console.error(error.error || error);
+            if ((error.error_summary && error.error_summary.contains("token"))) {
+                localStorage.removeItem("accessToken");                        
+            }
         });
 
 }
@@ -89,7 +91,7 @@ function setGenowriteDropboxState(state) {
         })
         .catch(function (error) {
             console.error(error.error || error);
-            if ((error.error && error.error.contains("token")) || (error && error.contains("token"))) {
+            if ((error.error_summary && error.error_summary.contains("token"))) {
                 localStorage.removeItem("accessToken");                        
             }
         });
