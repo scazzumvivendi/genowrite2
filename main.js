@@ -275,6 +275,9 @@ function syncGenowriteState() {
     localStorage.setItem('genowrite-content-0', localStorage.getItem('genowrite-content'))
     if (getGenowriteDropboxState) {
         getGenowriteDropboxState().then((newState) => {
+            if (!newState) {
+                return;
+            }
             localStorage.setItem('genowrite-content', newState)
             genowriteContent = JSON.parse(newState);
             genowriteKeys = Object.keys(genowriteContent)
