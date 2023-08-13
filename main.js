@@ -81,6 +81,7 @@ const tokenToCorrect =  {
     '...': '…',
     '\'': '’',
     '--': '–',
+    'E\'': 'È'
 }
 
 function checkPeriodStartWithCapital(allText) {
@@ -105,7 +106,7 @@ function checkPeriodStartWithCapital(allText) {
         }
 
         secondaryCharCount = 0
-        let sentences = line.split(/\.|\?|\!|\…/)
+        let sentences = line.split(/\.|\?|\!/)
         for (let sentence of sentences) {
             if (sentence == "") { secondaryCharCount += sentence.length + 1; continue }
             
