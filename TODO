@@ -2,6 +2,10 @@ edit in menu
 Export to HTML
 export to HTML in menu
 
+FIXME:
+First time with dropbox it has an error since the file does not exist.
+Dropbox sync sucks, no refresh token.
+
 NICE TO HAVE:
 Refactor
 NICE Modal
