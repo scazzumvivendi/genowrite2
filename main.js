@@ -81,7 +81,7 @@ const tokenToCorrect =  {
     '...': '…',
     '\'': '’',
     '--': '–',
-    'E\'': 'È'
+    'E’': 'È'
 }
 
 function checkPeriodStartWithCapital(allText) {
