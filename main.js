@@ -277,17 +277,18 @@ function syncGenowriteState() {
     if (getGenowriteDropboxState) {
         getGenowriteDropboxState().then((newState) => {
             if (!newState) {
-                return;
+                genowriteContent = JSON.parse(localStorage.getItem('genowrite-content'))
+            } else {
+                localStorage.setItem('genowrite-content', newState)
+                genowriteContent = JSON.parse(newState);
             }
-            localStorage.setItem('genowrite-content', newState)
-            genowriteContent = JSON.parse(newState);
             genowriteKeys = Object.keys(genowriteContent)
             selectDocument(genowriteKeys[0])
             refreshDocumentList(genowriteKeys)
             allChecks()
             document.querySelector("#dropbox-auth").style.display = "none";
             document.querySelector("#dropbox-synced").style.display = "block";
-        })    
+        })
     } else {
         setTimeout(()=>syncGenowriteState(), 100)
     }
