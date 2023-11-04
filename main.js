@@ -1,8 +1,14 @@
 var Size = Quill.import('attributors/style/size');
-Quill.register(Size, true);
-
+  
 var quill = new Quill('#editor', {
-    theme: 'snow'
+    theme: 'snow',
+    modules: {toolbar: [
+        [{ 'size':  [] }],
+        ['bold', 'italic', 'underline', 'strike'],
+        [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+        ['clean'],
+    ]
+    }
 },);
 
 const editor = document.getElementById('editor');

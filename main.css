@@ -32,3 +32,15 @@ h1{
 .doc {
     cursor: pointer;
 }
+
+.ql-snow .ql-picker-options{
+    padding: 0px;
+}
+
+.ql-snow .ql-picker-options .ql-picker-item{
+    padding-left: 6px;
+}
+
+.ql-snow .ql-size .ql-picker-item::before{
+    content: attr(data-value) !important;
+}
