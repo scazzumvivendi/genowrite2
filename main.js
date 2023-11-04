@@ -294,6 +294,9 @@ function syncGenowriteState() {
             allChecks()
             document.querySelector("#dropbox-auth").style.display = "none";
             document.querySelector("#dropbox-synced").style.display = "block";
+        }).catch((e) => {
+            document.querySelector("#dropbox-auth").style.display = "block";
+            document.querySelector("#dropbox-synced").style.display = "none";
         })
     } else {
         setTimeout(()=>syncGenowriteState(), 100)
