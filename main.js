@@ -294,11 +294,11 @@ function syncGenowriteState() {
             allChecks()
             document.querySelector("#dropbox-auth").style.display = "none";
             document.querySelector("#dropbox-synced").style.display = "block";
-            document.querySelector("#dropbox-status").style.innerText = "Dropbox status: ✓";
+            document.querySelector("#dropbox-status").innerText = "dropbox status: ✓";
         }).catch((e) => {
             document.querySelector("#dropbox-auth").style.display = "block";
             document.querySelector("#dropbox-synced").style.display = "none";
-            document.querySelector("#dropbox-status").style.innerText = "Dropbox status: ⚠";
+            document.querySelector("#dropbox-status").innerText = "dropbox status: ⚠";
         })
     } else {
         setTimeout(()=>syncGenowriteState(), 100)
