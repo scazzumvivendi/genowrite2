@@ -32,6 +32,7 @@ if (accessToken) {
     dbxAuth.getAccessTokenFromCode(REDIRECT_URI, getCodeFromUrl())
         .then((response) => {
             localStorage.setItem("accessToken", response.result.access_token);
+            window.location.reload();
         })
         .catch((error) => {
             console.error(error.error || error);

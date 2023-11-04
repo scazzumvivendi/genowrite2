@@ -168,16 +168,16 @@ function checkNoTwoCapitalConsecutiveLetters(allText) {
 var timeout = null;
 var dropboxTimeout = null;
 var genowriteContent, genowriteKeys;
-if (accessToken) {
-    setTimeout(
-        ()=>syncGenowriteState(), 5
-    )
-} else if (localStorage.getItem('genowrite-content')) {
+if (localStorage.getItem('genowrite-content')) {
     genowriteContent = JSON.parse(localStorage.getItem('genowrite-content'))
     genowriteKeys = Object.keys(genowriteContent)
     selectDocument(genowriteKeys[0])
     refreshDocumentList(genowriteKeys)
     allChecks()
+}
+
+if (accessToken) {
+    syncGenowriteState()
 }
 
 var selectedDoc;
