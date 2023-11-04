@@ -44,3 +44,7 @@ h1{
 .ql-snow .ql-size .ql-picker-item::before{
     content: attr(data-value) !important;
 }
+
+#dropbox-status {
+    float:right
+}
